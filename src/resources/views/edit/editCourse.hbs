@@ -1,0 +1,128 @@
+<div class="row">
+    <div class="col-xl-12">
+        <div class="breadcrumb-holder">
+            <h1 class="main-title float-left">Form Edit Course</h1>
+            <ol class="breadcrumb float-right">
+                <li class="breadcrumb-item">Home</li>
+                <li class="breadcrumb-item active">Edit Course</li>
+            </ol>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<!-- end row -->
+
+
+<div class="row">
+
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+        <div class="card mb-3">
+
+
+            <div class="card-body">
+
+                <form method="POST" action="/admin/{{course._id}}/course?_method=PUT">
+
+
+                    <div class="form-group">
+                        <label for="name">Name Course<span class="text-danger">*</span></label>
+                        <input type="text" name="name" value="{{course.name}}" data-parsley-trigger="change" required
+                            placeholder="Enter name course" class="form-control" id="name" autocomplete="off">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Description</label>
+                        <div>
+                            <textarea name="description" required class="form-control">{{course.description}}</textarea>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="videoID">VideoID<span class="text-danger">*</span></label>
+                        <input type="text" name="videoId" value="{{course.videoId}}" data-parsley-trigger="change"
+                            required placeholder="Enter videoID" class="form-control" id="videoID" autocomplete="off">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="level">Level<span class="text-danger">*</span></label>
+                        <input type="text" name="level" value="{{course.level}}" data-parsley-trigger="change" required
+                            placeholder="Enter level" class="form-control" id="level" autocomplete="off">
+                    </div>
+
+
+
+
+                    <div class="form-group text-right m-b-0">
+                        <button class="btn btn-primary" type="submit">
+                            Submit
+                        </button>
+
+                        <button type="reset" class="btn btn-secondary m-l-5">
+                            Cancel
+                        </button>
+                    </div>
+
+                </form>
+
+            </div>
+        </div><!-- end card-->
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+        <div class="card mb-3">
+            <div class="card-header">
+                <h3><i class="far fa-hand-pointer"></i> Multi steps form demo</h3>
+                Sometimes, you'll need to split long and fastidious forms into multiple parts. See how you could
+                leverage Parsley groups to easily validate such multi step forms, step by step.
+            </div>
+
+            <div class="card-body">
+
+                <form class="demo-form" action="#">
+                    <div class="form-section">
+                        <label for="firstname">First Name:</label>
+                        <input type="text" class="form-control" name="firstname" id="firstname" required="">
+
+                        <label for="lastname">Last Name:</label>
+                        <input type="text" class="form-control" name="lastname" id="lastname" required="">
+                    </div>
+
+                    <div class="form-section">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" name="email" id="email" required="">
+                    </div>
+
+                    <div class="form-section">
+                        <label for="color">Favorite color:</label>
+                        <input type="text" class="form-control" name="color" id="color" required="">
+                    </div>
+
+                    <br /><br />
+
+                    <div class="form-navigation">
+                        <button type="button" class="previous btn btn-info pull-left">&lt;
+                            Previous</button>
+                        <button type="button" class="next btn btn-info pull-right">Next
+                            &gt;</button>
+                        <input type="submit" class="btn btn-primary pull-right">
+                        <span class="clearfix"></span>
+                    </div>
+
+                </form>
+
+                <script>
+                </script>
+
+            </div>
+
+        </div>
+        <!-- end card-->
+
+    </div>
+
+
+
+
+
+</div>

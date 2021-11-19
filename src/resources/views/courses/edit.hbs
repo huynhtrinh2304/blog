@@ -1,0 +1,30 @@
+<div class="mt-4">
+    <h2>EDIT COURSES</h2>
+</div>
+
+
+<form class="mt-4" method="POST" action="/courses/{{course._id}}?_method=PUT">
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">Name Course</label>
+        <input type="text" value="{{course.name}}" class="form-control" id="name" name="name" placeholder="Enter name" autocomplete="off">
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">Description</label>
+        <textarea class="form-control" id="description" name="description" placeholder="Enter description">{{course.description}}</textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">VideoID</label>
+        <input type="text" value="{{course.videoId}}" class="form-control" id="videoid" name="videoId" placeholder="Enter Video ID"
+            autocomplete="off">
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">Level</label>
+        <input type="text" value="{{course.level}}" class="form-control" id="level" name="level" placeholder="Enter level" autocomplete="off">
+    </div>
+
+    <button type="submit" class="btn btn-primary">SAVE</button>
+</form>

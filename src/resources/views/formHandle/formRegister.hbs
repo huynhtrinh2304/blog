@@ -1,0 +1,77 @@
+<h1 class="w3ls">Official Signup Form</h1>
+<div class="content-w3ls">
+    <div class="content-agile1">
+
+    </div>
+    <div class="content-agile2">
+
+        <form action="/handle/register" method="POST" enctype="multipart/form-data">
+
+            <div class="form-control w3layouts">
+                <p>{{error}}</p>
+            </div>
+
+            <div class="form-control w3layouts">
+                <input type="text" id="fullname" name="fullname" placeholder="Full Name"
+                    title="Please enter your First Name" required="" autocomplete="off">
+            </div>
+
+            <div class="form-control w3layouts">
+                <input type="text" id="username" name="username" placeholder="User Name"
+                    title="Please enter a valid email" required="" autocomplete="off">
+            </div>
+
+            <div class="form-control agileinfo">
+                <input type="password" class="lock" name="password" placeholder="Password" id="password1" required="">
+            </div>
+
+            <div class="form-control agileinfo">
+                <input type="password" class="lock" name="confirm-password" placeholder="Confirm Password"
+                    id="password2" required="">
+            </div>
+
+            <div class="file-img">
+                <input type="file" name="avatar" id="file-img" required>
+            </div>
+
+
+
+            <input type="submit" class="register" value="Register" required="">
+
+
+
+        </form>
+
+        <div class="back">
+            <a href="/handle/login" title="login"><i class="fa fa-arrow-circle-left"></i></i></a>
+        </div>
+
+        <ul class="social-agileinfo wthree2">
+            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+        </ul>
+    </div>
+    <div class="clear"></div>
+</div>
+
+
+
+
+<script type="text/javascript">
+    window.onload = function () {
+        document.getElementById("password1").oninput = validatePassword;
+        document.getElementById("password2").oninput = validatePassword;
+    }
+
+    function validatePassword() {
+        var pass2 = document.getElementById("password2").value;
+        var pass1 = document.getElementById("password1").value;
+        if (pass1 != pass2)
+            document.getElementById("password2").setCustomValidity("Passwords Don't Match");
+        else
+            document.getElementById("password2").setCustomValidity('');
+
+    }
+</script>

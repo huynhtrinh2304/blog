@@ -1,0 +1,103 @@
+<script>
+
+    const loading = document.querySelector('.loading');
+    const body = document.querySelector('body');
+
+    var htmls = `<section>
+        <div class="loader">
+            <span style="--i:1;"></span>
+            <span style="--i:2;"></span>
+            <span style="--i:3;"></span>
+            <span style="--i:4;"></span>
+            <span style="--i:5;"></span>
+            <span style="--i:6;"></span>
+            <span style="--i:7;"></span>
+            <span style="--i:8;"></span>
+            <span style="--i:9;"></span>
+            <span style="--i:10;"></span>
+            <span style="--i:11;"></span>
+            <span style="--i:12;"></span>
+            <span style="--i:13;"></span>
+            <span style="--i:14;"></span>
+            <span style="--i:15;"></span>
+            <span style="--i:16;"></span>
+            <span style="--i:17;"></span>
+            <span style="--i:18;"></span>
+            <span style="--i:19;"></span>
+            <span style="--i:20;"></span>
+        </div>
+    </section>`
+
+    loading.innerHTML = htmls;
+
+
+
+</script>
+
+
+
+<div class="mt-4 text-center"><h1 class="title">List Courses</h1></div>
+
+
+<div class="mt-4">
+    <div class="row">
+
+        {{#each courses}}
+        <div class="col-sm-6 col-lg-4 box-card-item">
+            <div class="card card-course-item card-item">
+                <a href="/courses/{{this.slug}}">
+                    <figure><img class="card-img-top img-course" src="{{this.img}}" alt="Card image cap"></figure>
+                </a>
+                <div class="card-body">
+                    <a href="/courses/{{this.slug}}">
+                        <h5 class="card-title">{{this.name}}</h5>
+                    </a>
+                    <p class="card-text">{{this.description}}</p>
+                    <a href="#" class="btn btn-primary">BUY</a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+
+         
+
+        
+
+    </div>
+</div>
+
+
+
+<div class="text-center">
+    <nav class="mt-5 d-inline-block " aria-label="Error">
+        <ul class="pagination">
+
+            <li class="page-item">
+                <a class="page-link" href="?page={{previous}}">Previous</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="/">1</a></li>
+            <li class="page-item active"><a class="page-link" href="?page=2">2</a></li>
+            <li class="page-item"><a class="page-link" href="?page=3">3</a></li>
+            <li class="page-item">
+                <a class="page-link" href="?page={{next}}">Next</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+
+
+<script>
+    var loadings = document.querySelector('.loading');
+    var bodys = document.querySelector('body');
+
+    bodys.onload = function () {
+        setTimeout(function() {
+            loadings.remove();
+        },0)
+    }
+
+
+
+
+</script>

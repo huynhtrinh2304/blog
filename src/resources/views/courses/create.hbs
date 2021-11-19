@@ -1,0 +1,34 @@
+<div class="mt-4">
+    <h2>CREATE COURSES</h2>
+</div>
+
+
+<div class="mt-4">
+    <form method="POST" action="/courses/store">
+
+        <div class="form-group">
+            <label for="exampleInputEmail1">Name Course</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter name" autocomplete="off">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputEmail1">Description</label>
+            <input type="text" class="form-control" id="description" name="description" placeholder="Enter description"
+                autocomplete="off">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputEmail1">VideoID</label>
+            <input type="text" class="form-control" id="videoid" name="videoId" placeholder="Enter Video ID"
+                autocomplete="off">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputEmail1">Level</label>
+            <input type="text" class="form-control" id="level" name="level" placeholder="Enter level"
+                autocomplete="off">
+        </div>
+
+        <button type="submit" class="btn btn-primary">CREATE</button>
+    </form>
+</div>

@@ -1,0 +1,387 @@
+<div class="row">
+    <div class="col-xl-12">
+        <div class="breadcrumb-holder">
+            <h1 class="main-title float-left">Courses and Users deleted</h1>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<!-- end row -->
+
+
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <div class="card mb-3">
+            <div class="card-header">
+                <h3>
+                    <i class="fa fa-user"></i> All users
+                </h3>
+            </div>
+            <!-- end card-header -->
+
+
+
+
+            <div class="card-body">
+
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+
+
+
+                        <thead>
+
+                            <tr>
+                                <th style="width:50px">Index</th>
+                                <th style="min-width:150px">Full Name</th>
+                                <th style="min-width:150px;">User Name</th>
+                                <th style="min-width:100px;">Password</th>
+                                <th style="min-width:100px">Role</th>
+                                <th style="width:200px">Deleted-At</th>
+                                <th style="min-width:100px;">Actions</th>
+                            </tr>
+
+                        </thead>
+
+
+
+                        <tbody>
+
+                            {{#each accounts}}
+                            <tr>
+
+                                <td>
+                                    {{sum @index 1}}
+                                </td>
+
+                                <td>
+                                    {{this.fullname}}
+                                </td>
+
+                                <td>
+                                    {{this.username}}
+                                </td>
+
+                                <td>
+                                    {{this.password}}
+                                </td>
+
+                                <td>
+                                    {{this.who}}
+                                </td>
+
+                                <td>
+                                    {{this.deletedAt}}
+                                </td>
+
+                                <td>
+                                    <a href="" id="btn-restore-user" class="btn btn-primary btn-sm btn-block"
+                                        data-id="{{this._id}}"><i class="fa fa-window-restore"></i>
+                                        Restore</a>
+                                    <a href="#" class="btn btn-danger btn-sm btn-block mt-2" data-toggle="modal"
+                                        data-target="#modal-delete-user" data-id="{{this._id}}"><i
+                                            class="fa fa-user-times"></i> Delete</a>
+                                </td>
+
+
+
+                            </tr>
+                            {{/each}}
+
+
+
+
+                        </tbody>
+                    </table>
+                </div>
+
+
+
+
+
+
+            </div>
+            <!-- end card-body -->
+
+        </div>
+        <!-- end card -->
+
+    </div>
+    <!-- end col -->
+
+</div>
+<!-- end row -->
+
+
+
+
+
+
+
+{{!-- Table Courses List--}}
+
+
+
+<div class="row mt-5">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <div class="card mb-3">
+            <div class="card-header">
+
+                <h3>
+                    <i class="fa fa-book"></i> All courses
+                </h3>
+            </div>
+            <!-- end card-header -->
+
+
+
+
+            <div class="card-body">
+
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+
+
+
+                        <thead>
+
+                            <tr>
+                                <th style="width:50px">Index</th>
+                                <th style="min-width:100px">Name Course</th>
+                                <th style="min-width:100px">VideoId</th>
+                                <th style="min-width:100px;">Level</th>
+                                <th class="text-center" style="width:200px">Image</th>
+                                <th style="width:200px;">Delete-At</th>
+                                <th style="min-width:100px;">Actions</th>
+
+                            </tr>
+
+                        </thead>
+
+
+
+                        <tbody>
+
+                            {{#each courses}}
+                            <tr>
+
+                                <td>
+                                    {{sum @index 1}}
+                                </td>
+
+                                <td>
+                                    {{this.name}}
+                                </td>
+
+                                <td>
+                                    {{this.videoId}}
+                                </td>
+
+
+
+                                <td>
+                                    {{this.level}}
+                                </td>
+
+                                <td>
+                                    <img src="{{this.img}}" style="width:180px;">
+                                </td>
+
+                                <td>
+                                    {{this.deletedAt}}
+                                </td>
+
+
+
+
+                                <td>
+                                    <a href="" id="btn-restore-course" class="btn btn-primary btn-sm btn-block" data-id="{{this._id}}"><i
+                                            class="fa fa-edit"></i>
+                                        Restore</a>
+                                    <a href="#" class="btn btn-danger btn-sm btn-block mt-2" data-toggle="modal"
+                                        data-target="#delete-course-modal" data-id="{{this._id}}"><i
+                                            class="fa fa-trash"></i> Delete</a>
+                                </td>
+
+
+
+                            </tr>
+                            {{/each}}
+
+
+
+
+                        </tbody>
+                    </table>
+                </div>
+
+
+
+
+
+
+
+
+            </div>
+            <!-- end card-body -->
+
+        </div>
+        <!-- end card -->
+
+    </div>
+    <!-- end col -->
+
+</div>
+<!-- end row -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="modal fade" id="modal-delete-user" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Warning</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="text-danger fs-5">Are you sure you want to delete user ???</p>
+            </div>
+            <div class="modal-footer">
+                <button id="btn-delete-user" type="button" class="btn btn-danger">Delete</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="delete-course-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Warning</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="text-danger fs-5">Are you sure you want to delete course ???</p>
+            </div>
+            <div class="modal-footer">
+                <button id="btn-delete-course" type="button" class="btn btn-danger">Delete</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<form id="form-delete-user" method="POST"></form>
+<form id="form-restore-user" method="POST"></form>
+
+
+<form id="form-delete-course" method="POST"></form>
+<form id="form-restore-course" method="POST"></form>
+
+
+
+
+
+
+
+
+<script>
+
+
+    document.addEventListener('DOMContentLoaded', function (e) {
+        var userId;
+        var courseId;
+
+
+        var deleteUser = document.getElementById('btn-delete-user');
+        var deleteCourse = document.getElementById('btn-delete-course');
+
+
+        var btnRestoreUser = document.getElementById('btn-restore-user');
+        var btnRestoreCourse = document.getElementById('btn-restore-course');
+
+        var formDeleteUser = document.forms['form-delete-user'];
+        var formRestoreUser = document.forms['form-restore-user'];
+
+        var formDeleteCourse = document.forms['form-delete-course'];
+        var formRestoreCourse = document.forms['form-restore-course'];
+
+
+
+        $('#modal-delete-user').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget);
+            userId = button.data('id');
+
+        })
+
+
+        $('#delete-course-modal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget);
+            courseId = button.data('id');
+
+        })
+
+
+        deleteUser.onclick = function (event) {
+            formDeleteUser.action = '/admin/' + userId + '/delete-over-user?_method=DELETE';
+            formDeleteUser.submit();
+        }
+
+        deleteCourse.onclick = function (event) {
+            formDeleteCourse.action = '/admin/' + courseId + '/delete-over-course?_method=DELETE';
+            formDeleteCourse.submit();
+        }
+
+
+
+
+        btnRestoreUser.onclick = function (event) {
+            event.preventDefault();
+            var userId = $(this).data('id');
+            formRestoreUser.action = '/admin/' + userId + '/restore-user?_method=PATCH';
+            formRestoreUser.submit();
+        }
+
+
+        btnRestoreCourse.onclick = function(event) {
+            event.preventDefault();
+            var courseId = $(this).data('id');
+            formRestoreCourse.action = '/admin/' + courseId + '/restore-course?_method=PATCH';
+            formRestoreCourse.submit();
+
+
+
+        }
+
+
+
+    });
+
+
+
+
+</script>

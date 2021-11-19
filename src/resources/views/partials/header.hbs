@@ -1,0 +1,61 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+
+
+        <li class="ml-4 mt-1">
+          <a href="" style="color:#fff"> Phim Mới </a>
+        </li>
+
+        <li class="ml-4 mt-1">
+          <a href="/category/action" style="color:#fff"> Phim Hành Động </a>
+        </li>
+
+        <li class="ml-4 mt-1">
+          <a href="" style="color:#fff"> Phim Bộ </a>
+        </li>
+
+        <li class="ml-4 mt-1">
+          <a href="" style="color:#fff"> Phim Hoạt Hình</a>
+        </li>
+
+
+      </ul>
+
+
+
+      <ul class="navbar-nav ml-auto">
+
+        <li class="mr-4 mt-3">
+          <p style="color:#fff">User : {{account.fullname}}</p>
+        </li>
+
+        <li class="nav-item dropdown">
+
+          <a class="nav-link dropdown-toggle p-1 " href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <img src="{{account.avatar}}" class="rounded-circle" style="width:50px; height:50px" alt="">
+          </a>
+
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/handle/removeCokkie">Đăng Xuất <i class="fas fa-sign-out-alt"></i></a>
+
+          </div>
+        </li>
+
+
+
+
+      </ul>
+
+
+    </div>
+  </div>
+</nav>
