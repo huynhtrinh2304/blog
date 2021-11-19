@@ -1,0 +1,34 @@
+[{
+  "_id": {
+    "$oid": "60f6f88183b5b5014c416187"
+  },
+  "deleted": false,
+  "fullname": "Huỳnh Viết Trịnh",
+  "username": "trinh",
+  "password": "123",
+  "avatar": "\\uploads\\2296a85b5e0cba0839393ce3861f5f58",
+  "who": "admin",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60f6fcaf4f53844ab004ed23"
+  },
+  "deleted": false,
+  "fullname": "123",
+  "username": "123",
+  "password": "123",
+  "avatar": "\\uploads\\f5f8975fcbb78c10c665695516b4d5e7",
+  "who": "user",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60f7981c4af0392c108b5d90"
+  },
+  "deleted": false,
+  "fullname": "trinh huynh ",
+  "username": "trinh123",
+  "password": "123",
+  "avatar": "\\uploads\\13167ce1a3eaf1f7ae6ea340e75e2c15",
+  "who": "user",
+  "__v": 0
+}]
